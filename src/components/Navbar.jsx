@@ -1,4 +1,15 @@
-import { Flex, Box, Spacer, Heading, Center } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Spacer,
+  Heading,
+  MenuButton,
+  Menu,
+  Portal,
+  MenuItem,
+  MenuList,
+  Button,
+} from "@chakra-ui/react";
 import { TbBrandWalmart } from "react-icons/tb";
 import { CiGrid41 } from "react-icons/ci";
 import { BsUiRadiosGrid } from "react-icons/bs";
@@ -10,7 +21,7 @@ import { CiSearch } from "react-icons/ci";
 function Navbar() {
   return (
     <>
-      <div className="bg-blue-700 text-white h-[10vh] w-[100%] overflow-x-hidden fixed top-0 px-10">
+      <div className="bg-blue-700 text-white h-[10vh] w-[100%] fixed top-0 px-10">
         <Flex align={"center"}>
           <Box>
             <button className="hover:bg-blue-950 hover:rounded-2xl p-2">
@@ -65,30 +76,34 @@ function Navbar() {
               <Flex align={"center"}>
                 <CiHeart className="w-4 h-4 text-white" />
                 <Spacer />
-                <Heading className="text-white text-sm pl-2">My Items</Heading>
+                <Button>My Items</Button>
               </Flex>
             </button>
           </Box>
           <Spacer />
-          <Box bg="green.400">
+          <Box>
             <button className="hover:bg-blue-950 hover:rounded-2xl p-2">
               <Flex align={"Center"}>
                 <FaRegUser className="w-4 h-4 text-white" />
                 <Spacer />
-                <Heading className="text-white text-sm pl-2">
-                  Sign In Account
-                </Heading>
+                <Menu>
+                  <MenuButton> Sign In Account</MenuButton>
+                  <Portal>
+                    <MenuList mt={6}>
+                      <Button colorScheme="blue" w={"94%"} borderRadius={8}>Sign in or create account</Button>
+                      <MenuItem>New Window</MenuItem>
+                      <MenuItem>Open Closed Tab</MenuItem>
+                      <MenuItem>Open File</MenuItem>
+                    </MenuList>
+                  </Portal>
+                </Menu>
               </Flex>
             </button>
           </Box>
           <Spacer />
-          <Box bg="green.400">
+          <Box>
             <button className="hover:bg-blue-950 hover:rounded-2xl p-2">
-              <Flex align={"center"}>
-                <FaCartPlus className="w-4 h-4 text-white" />
-                <Spacer />
-                <Heading className="text-white text-sm pl-2">Cart</Heading>
-              </Flex>
+              <FaCartPlus />
             </button>
           </Box>
         </Flex>

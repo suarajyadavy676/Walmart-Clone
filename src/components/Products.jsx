@@ -22,7 +22,7 @@ function Products() {
     getData();
   }, []);
   return (
-    <div className="grid grid-cols-1 w-[90%] mx-auto gap-4 my-[15vh] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid grid-cols-1 w-[90%] mx-auto gap-4 my-[25vh] lg:my-[18vh] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {/* <h1>Products Details</h1> */}
       {data?.map((ele) => (
         <Card {...ele} key={ele.id} />

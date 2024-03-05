@@ -7,11 +7,12 @@ import Navbar2 from './components/Navbar2'
 import Footer from './components/Footer'
 import Products from './components/Products'
 
+
 function App() {
 // console.log(hello)
   return (
     <>
-      <Navbar/>
+      <Navbar2/>
       <Products/>
       <Footer/>
     </>
