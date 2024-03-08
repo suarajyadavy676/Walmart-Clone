@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
   Flex,
   Box,
@@ -24,8 +24,18 @@ import { CiUser } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { GrNotes } from "react-icons/gr";
 
+import { ContextData } from "../context/ContextProvider";
+import { Link } from "react-router-dom";
+
 function Navbar2() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [inputData,setInputData] = useState('')
+  const {setSearch} = useContext(ContextData)
+  // console.log(inputData)
+  function handleButton(){
+    setSearch(inputData)
+    
+  }
   return (
     <>
       <div className="bg-blue-800 w-full fixed top-0 text-white">
@@ -52,10 +62,15 @@ function Navbar2() {
               <Flex align={"center"} className="relative">
                 <input
                   type="text"
+                  onChange={(e)=>setInputData(e.target.value)}
                   placeholder="Search everything at Walmart online and in store"
                   className="w-full text-center h-8 rounded-2xl text-black"
                 />
-                <CiSearch className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full" />
+                <button onClick={handleButton} className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full">
+                <Link to="/search">
+                  <CiSearch className="m-auto"/>
+                </Link>
+                </button>
               </Flex>
             </Box>
             <Spacer />
@@ -160,9 +175,14 @@ function Navbar2() {
                 <input
                   type="text"
                   placeholder="Search Walmart"
+                  onChange={(e)=>setInputData(e.target.value)}
                   className="w-full text-center h-8 rounded-2xl text-black"
                 />
-                <CiSearch className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full" />
+                <button onClick={handleButton} className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full">
+                <Link to="/search">
+                <CiSearch className="m-auto" />
+                </Link>
+                </button>
               </Flex>
             </Box>
             <Spacer />

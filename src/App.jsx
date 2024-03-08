@@ -1,11 +1,8 @@
-import { useContext, useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-import Navbar from './components/Navbar'
 import Navbar2 from './components/Navbar2'
+import Navbar1 from './components/Navbar1'
 import Footer from './components/Footer'
 import Products from './components/Products'
+import AllRoutes from './routes/AllRoutes'
 
 
 function App() {
@@ -13,7 +10,9 @@ function App() {
   return (
     <>
       <Navbar2/>
-      <Products/>
+      <Navbar1/>
+      {/* <Products/> */}
+      <AllRoutes/>
       <Footer/>
     </>
   )
