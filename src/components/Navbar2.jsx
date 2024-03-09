@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
 function Navbar2() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [inputData, setInputData] = useState("");
-  const { setSearch } = useContext(ContextData);
+  const { setSearch,cartData } = useContext(ContextData);
   // console.log(inputData)
   function handleButton() {
     setSearch(inputData);
@@ -131,7 +131,9 @@ function Navbar2() {
             <Spacer />
             <Box p="2">
               <Link to="/cart">
-                <CiShoppingCart className=" text-3xl" />
+              <sup className="text-white">{cartData.length}</sup>
+                  <CiShoppingCart className="text-white text-3xl -mt-3" />
+                  <p className="text-white -mt-2">{`$${cartData?.reduce((total, currentValue) => total = total + currentValue.price,0)}`}</p>
               </Link>
             </Box>
           </Flex>
@@ -195,7 +197,9 @@ function Navbar2() {
             <Spacer />
             <Box>
               <Link to="/cart">
-                <CiShoppingCart className="text-white text-3xl" />
+                  <sup className="text-white">{cartData.length}</sup>
+                  <CiShoppingCart className="text-white text-3xl -mt-3" />
+                  <p className="text-white -mt-2">{`$${cartData?.reduce((total, currentValue) => total = total + currentValue.price,0)}`}</p>
               </Link>
             </Box>
           </Flex>
