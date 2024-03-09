@@ -1,44 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flex, Box, Spacer } from "@chakra-ui/react";
-import Card from "./Card";
+import { Grid, Box, Spacer } from "@chakra-ui/react";
+// import Card from "./Card";
 
 function Navbar1() {
-  
   return (
     <>
-      <div className=" bg-blue-800 h-30 w-full mt-16 fixed top-0 hidden lg:block">
+      <div className=" bg-blue-800 h-30 w-full mt-20 fixed top-0 sm:mt-30 md:mt-18 lg:mt-16">
         <hr className="text-white" />
         {/* Large Screen */}
         <div>
-          <Flex className="text-white">
-            <Box p="4">
+          <Grid templateColumns={{base:"repeat(2,1fr)",sm:"repeat(3,1fr)",md:"repeat(4,1fr)",xl:"repeat(6,1fr)"}} w="90%" gap={4} className="text-white m-auto text-center">
               <Link to="/">All</Link>
-            </Box>
-            <Spacer />
-            <Box p="4">
+            {/* <Box p="4">
+            </Box> */}
               <Link to="/laptops">Laptops</Link>
-            </Box>
-            <Spacer />
-            <Box p="4">
+            {/* <Box p="4">
+            </Box> */}
               <Link to="/smartphones">Smartphones</Link>
-            </Box>
-            <Spacer />
-            <Box p="4">
+            {/* <Box p="4">
+            </Box> */}
               <Link to="/womens-jewellery">Womens-Jewellery</Link>
-            </Box>
-            <Spacer />
-            <Box p="4">
+            {/* <Box p="4">
+            </Box> */}
               <Link to="/womens-dresses">womens-dresses</Link>
-            </Box>
-            <Spacer />
-            <Box p="4">
-              {/* <Link to="/sunglasses">sunglasses</Link> */}
-              <button>
+            {/* <Box p="4">
+            </Box> */}
                 <Link to="/sunglasses">sunglasses</Link>
+            {/* <Box p="4">
+              <button>
               </button>
-            </Box>
-          </Flex>
+            </Box> */}
+          </Grid>
         </div>
       </div>
     </>

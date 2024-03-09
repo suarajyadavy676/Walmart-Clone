@@ -29,12 +29,11 @@ import { Link } from "react-router-dom";
 
 function Navbar2() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [inputData,setInputData] = useState('')
-  const {setSearch} = useContext(ContextData)
+  const [inputData, setInputData] = useState("");
+  const { setSearch } = useContext(ContextData);
   // console.log(inputData)
-  function handleButton(){
-    setSearch(inputData)
-    
+  function handleButton() {
+    setSearch(inputData);
   }
   return (
     <>
@@ -62,14 +61,17 @@ function Navbar2() {
               <Flex align={"center"} className="relative">
                 <input
                   type="text"
-                  onChange={(e)=>setInputData(e.target.value)}
+                  onChange={(e) => setInputData(e.target.value)}
                   placeholder="Search everything at Walmart online and in store"
                   className="w-full text-center h-8 rounded-2xl text-black"
                 />
-                <button onClick={handleButton} className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full">
-                <Link to="/search">
-                  <CiSearch className="m-auto"/>
-                </Link>
+                <button
+                  onClick={handleButton}
+                  className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full"
+                >
+                  <Link to="/search">
+                    <CiSearch className="m-auto" />
+                  </Link>
                 </button>
               </Flex>
             </Box>
@@ -128,7 +130,9 @@ function Navbar2() {
             </Box>
             <Spacer />
             <Box p="2">
-              <CiShoppingCart className=" text-3xl" />
+              <Link to="/cart">
+                <CiShoppingCart className=" text-3xl" />
+              </Link>
             </Box>
           </Flex>
         </div>
@@ -175,19 +179,24 @@ function Navbar2() {
                 <input
                   type="text"
                   placeholder="Search Walmart"
-                  onChange={(e)=>setInputData(e.target.value)}
+                  onChange={(e) => setInputData(e.target.value)}
                   className="w-full text-center h-8 rounded-2xl text-black"
                 />
-                <button onClick={handleButton} className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full">
-                <Link to="/search">
-                <CiSearch className="m-auto" />
-                </Link>
+                <button
+                  onClick={handleButton}
+                  className="text-black absolute right-0 bg-yellow-300 h-full w-8 rounded-full"
+                >
+                  <Link to="/search">
+                    <CiSearch className="m-auto" />
+                  </Link>
                 </button>
               </Flex>
             </Box>
             <Spacer />
             <Box>
-              <CiShoppingCart className="text-white text-3xl" />
+              <Link to="/cart">
+                <CiShoppingCart className="text-white text-3xl" />
+              </Link>
             </Box>
           </Flex>
         </div>

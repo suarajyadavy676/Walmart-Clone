@@ -7,6 +7,7 @@ import Laptop from './Laptop'
 import WomenDress from './WomenDress'
 import WomenJewellary from './WomenJewellary'
 import Sunglass from './Sunglass'
+import Cart from '../components/Cart'
 
 function AllRoutes() {
   return (
@@ -18,6 +19,7 @@ function AllRoutes() {
       <Route path='/womens-dresses' element={<WomenDress/>}/>
       <Route path='/womens-jewellery' element={<WomenJewellary/>}/>
       <Route path='/sunglasses' element={<Sunglass/>}/>
+      <Route path='/cart' element={<Cart/>}/>
     </Routes>
   )
 }
