@@ -37,7 +37,7 @@ function Navbar2() {
   }
   return (
     <>
-      <div className="bg-blue-800 w-full fixed top-0 text-white">
+      <div className="bg-blue-800 w-full fixed top-0 text-white z-20">
         {/* Large Screen */}
         <div className="hidden lg:block">
           <Flex align={"center"}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../context/ContextProvider";
 import { useToast } from "@chakra-ui/react";
 import { Navigate } from "react-router-dom";
@@ -33,7 +33,7 @@ function Cart() {
                 />
                 <div className="flex-1">
                   <h2 className="text-lg font-bold">{ele.title}</h2>
-                  <span className="text-gray-600">{`$ ${ele.price}`}</span>
+                  <span className="text-gray-600">{`$ ${ele.price}`}</span> 
                 </div>
                 <button
                   onClick={() => setRemove(ele)}

@@ -6,7 +6,7 @@ import { Grid, Box, Spacer } from "@chakra-ui/react";
 function Navbar1() {
   return (
     <>
-      <div className=" bg-blue-800 w-full overflow-y-auto mt-20 fixed top-0 sm:mt-30 md:mt-18 lg:mt-16 ">
+      <div className=" bg-blue-800 w-full overflow-y-auto mt-20 fixed top-0 sm:mt-30 md:mt-18 lg:mt-16 z-40 ">
         <hr className="text-white" />
         {/* Large Screen */}
         <div>

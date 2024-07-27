@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes,Route } from 'react-router-dom'
 import Products from '../components/Products'
 import Search from '../components/Search'
